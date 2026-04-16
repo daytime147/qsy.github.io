@@ -1,0 +1,382 @@
+/* ===== 全局重置 & 字体 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #1e1e2f;
+    background-color: #f4f6fa;
+    height: 100vh;           /* 满屏高度 */
+    overflow: hidden;        /* 防止整体滚动，内部区域各自滚动 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== 左右分屏布局 ===== */
+.split-layout {
+    display: flex;
+    width: 1400px;           /* 适合宽屏的固定宽度，小屏幕用媒体查询 */
+    max-width: 98vw;
+    height: 95vh;
+    background-color: #ffffff;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* 左侧边栏 (简历) */
+.sidebar {
+    width: 35%;
+    background-color: #fafcff;
+    border-right: 1px solid #e9edf4;
+    padding: 2rem 1.8rem;
+    overflow-y: auto;        /* 内容多时可以滚动 */
+    scrollbar-width: thin;
+}
+
+/* 右侧主内容 (报告) */
+.main-content {
+    width: 65%;
+    padding: 2rem 2.2rem;
+    overflow-y: auto;
+    background-color: #ffffff;
+    scrollbar-width: thin;
+}
+
+/* ===== 左侧简历样式 ===== */
+.profile-card h1 {
+    font-size: 2.8rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    color: #0b1e33;
+    margin-bottom: 0.2rem;
+}
+
+.subheadline {
+    font-size: 1rem;
+    color: #4a657d;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px dashed #cddae9;
+    padding-bottom: 1rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #3a546d;
+    background: #eef3fa;
+    padding: 0.8rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1.8rem;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 650;
+    color: #1e2f44;
+    margin: 1.5rem 0 0.8rem;
+    letter-spacing: -0.2px;
+    border-left: 5px solid #2563eb;
+    padding-left: 0.8rem;
+}
+
+.edu-item {
+    margin-bottom: 1.2rem;
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    color: #1a2b3c;
+}
+
+.edu-detail {
+    font-size: 0.85rem;
+    color: #5f7d9c;
+    margin: 0.2rem 0 0.5rem;
+}
+
+.course-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.course-tags span {
+    background: #e2eaf3;
+    color: #1f3a5f;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.exp-item {
+    margin-bottom: 1.2rem;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
+}
+
+.exp-title {
+    font-weight: 650;
+    color: #1e3a5f;
+    font-size: 1rem;
+}
+
+.exp-date {
+    font-size: 0.8rem;
+    color: #6b85a0;
+    background: #eef3f9;
+    padding: 0.1rem 0.5rem;
+    border-radius: 20px;
+}
+
+.compact-list {
+    list-style: none;
+    padding-left: 0.2rem;
+}
+
+.compact-list li {
+    font-size: 0.85rem;
+    color: #334e6e;
+    margin-bottom: 0.4rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.compact-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-size: 0.9rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: #ffffff;
+    border: 1px solid #bdd3e8;
+    color: #1f3a5f;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+/* ===== 右侧报告模块化样式 ===== */
+.report-header {
+    margin-bottom: 1.8rem;
+}
+
+.report-header h2 {
+    font-size: 2rem;
+    font-weight: 650;
+    color: #0b1e33;
+    letter-spacing: -0.01em;
+}
+
+.report-sub {
+    color: #54708f;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+}
+
+.report-card {
+    background: #fbfdff;
+    border-radius: 24px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1.8rem;
+    border: 1px solid #e6ecf3;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+    transition: all 0.15s ease;
+}
+
+.report-card:hover {
+    border-color: #b8cee4;
+    box-shadow: 0 10px 20px -8px rgba(37, 99, 235, 0.08);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+/* 数据统计网格 */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.stat-item {
+    background: #e9f0fa;
+    border-radius: 20px;
+    padding: 0.8rem 0.2rem;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e4a7a;
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #3f658c;
+    font-weight: 500;
+}
+
+.card-desc {
+    color: #2c4056;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 双列布局 */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.two-columns h4 {
+    font-size: 1rem;
+    font-weight: 650;
+    color: #2b4b6e;
+    margin-bottom: 0.7rem;
+    border-bottom: 1.5px solid #d7e2ee;
+    padding-bottom: 0.3rem;
+}
+
+.dotted-list {
+    list-style: none;
+}
+
+.dotted-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.55rem;
+    padding-left: 1.4rem;
+    position: relative;
+    color: #2e4c6b;
+}
+
+.dotted-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0.3rem;
+    color: #2563eb;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* 企业洞察标签 */
+.insight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.insight-badge {
+    background: #eef3fa;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #1f4973;
+    border-left: 3px solid;
+}
+
+.insight-badge.huawei { border-left-color: #c00; }
+.insight-badge.xiaomi { border-left-color: #ff6900; }
+.insight-badge.tencent { border-left-color: #0066cc; }
+.insight-badge.bytedance { border-left-color: #3257a8; }
+.insight-badge.netease { border-left-color: #d43c33; }
+
+/* 引用块 */
+blockquote {
+    font-style: italic;
+    background: #f3f7fd;
+    padding: 1rem 1.5rem;
+    border-radius: 18px;
+    color: #1d3b5a;
+    margin: 1rem 0;
+    border-left: 6px solid #2563eb;
+    font-size: 0.95rem;
+}
+
+.thanks-line {
+    text-align: right;
+    font-weight: 500;
+    color: #416183;
+    margin-top: 0.5rem;
+}
+
+.highlight-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f6faff 100%);
+}
+
+/* ===== 滚动条美化 ===== */
+.sidebar::-webkit-scrollbar, .main-content::-webkit-scrollbar {
+    width: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cbd6e4;
+    border-radius: 10px;
+}
+
+/* ===== 响应式：小屏幕时改为上下布局 ===== */
+@media (max-width: 900px) {
+    body {
+        height: auto;
+        overflow: auto;
+        padding: 1rem;
+    }
+    .split-layout {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+    }
+    .sidebar, .main-content {
+        width: 100%;
+        overflow-y: visible;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
